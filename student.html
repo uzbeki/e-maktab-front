@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/student.css">
+    <script src="js/student.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- navigation panel -->
+        <nav id="base-nav">
+            <div class="nav navbar-brand navbar-logo">
+                <a href="{% url 's_login' %}"><i class="fa fa-graduation-cap"></i>&nbsp;MySchool</a>
+            </div>
+            <div class="hamburger">
+                <input type="checkbox" name="menu" id="menu" onchange="trigger(this)">
+                <label for="menu"></label>
+            </div>
+            <div class="menu-inside" id="menu-inside">
+                <div class="nav navbar">
+                    <ul class="navbar-ul">
+                        <li class="navbar-item"><a href="{% url 'student' %}">Courses</a></li>
+                        <li class="navbar-item"><a href="#">Homework</a></li>
+                        <li class="navbar-item"><a href="#">Grades</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-dropdown">
+                    <!-- <img src="https://via.placeholder.com/30" alt="Avatar"> -->
+                    <li class="navbar-item dropbtn"><a href="#">Bekhruz Otaev&nbsp;<i class="fa fa-angle-down"></i></a>
+                    </li>
+                    <div class="dropdown-content">
+                        <li class="dropdown-item profile-item"><a href="#"><i class="fa fa-user-circle-o"
+                                    aria-hidden="true"></i>&nbsp;Profile</a></li>
+                        <li class="logout navbar-item"><a href="#"><i class="fa fa-sign-out"
+                                    aria-hidden="true"></i>&nbsp;Logout</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- main content goes here -->
+        <main id="student-main">
+            <section class="enrolled-classes">
+                <header>
+                    <h3 class="section-title card-header">Enrolled Courses</h3>
+                </header>
+                <div class="course-list card-group">
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card course-item">
+                        <a class="card-content course-content" href="{% url 'course' %}">
+                            <img class="card-img" src="{% static 'eschool\img\physics.jpg' %}" alt="course image">
+                            <div class="course-info">
+                                <div class="course-id">
+                                    <p>123456</p>
+                                </div>
+                                <div class="course-schedule">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <span class="course-date">Mon 2</span>
+                                    <span class="course-date">Thu 2</span>
+                                </div>
+                                <div class="course-name">
+                                    <h2>Algebra</h2>
+                                </div>
+                                <div class="course-instructor">
+                                    <p class="instructor-name">James William</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="course-menu card-footer">
+                            <ul>
+                                <li class="course-menu-item"><a href="#syllabus" data-tooltip="syllabus"><i
+                                            class="fa fa-list-alt"></i></a></li>
+                                <li class="course-menu-item"><a href="#textbook" data-tooltip="textbooks"><i
+                                            class="fa fa-book"></i></a></li>
+                                <li class="course-menu-item"><a href="#assignment" data-tooltip="assignments"><i
+                                            class="fa fa-pencil"></i></a></li>
+                                <li class="course-menu-item"><a href="#exam" data-tooltip="exams"><i
+                                            class="fa fa-puzzle-piece"></i></a></li>
+                                <li class="course-menu-item"><a href="#grade" data-tooltip="grades"><i
+                                            class="fa fa-check-square-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section id="asides">
+                <aside class="deadlines card">
+                    <div class="card-title">
+                        <h4 class="deadline-header card-header">Deadlines</h4>
+                    </div>
+                    <div class="deadline-content card-content">
+                        <a href="#" class="deadline-link">
+                            <p>Essay Submission</p>
+                            <div><time class="deadline-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;12pm Today</time></div>
+                        </a>
+                        <a href="#" class="deadline-link">
+                            <p>Reading assignment</p>
+                            <div><time class="deadline-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;12pm Today</time></div>
+                        </a>
+                        <a href="#" class="deadline-link">
+                            <p>Survey Completion</p>
+                            <div><time class="deadline-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;12pm Today</time></div>
+                        </a>
+                    </div>
+                    <div class="card-footer load-more">
+                        <button class="load-more" type="submit">load more&nbsp;<i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+                    </div>
+                </aside>
+                <aside class="announcements">
+                    <div class="card-title">
+                        <h4 class="announcement-header card-header">Announcements</h4>
+                    </div>
+                    <div class="announcement-content card-content">
+                        <a href="#" class="announcement-link">
+                            <p>Classroom Change Notice
+                            </p>
+                            <div><time class="announcement-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;12pm Today</time></div>
+                        </a>
+                        <a href="#" class="announcement-link">
+                            <p>New Club Opened
+                            </p>
+                            <div><time class="announcement-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;15pm Yesterday</time></div>
+                        </a>
+                        <a href="#" class="announcement-link">
+                            <p>Sports Festival
+                            </p>
+                            <div><time class="announcement-time" datetime=""><i class="fa fa-clock-o"
+                                        aria-hidden="true"></i>&nbsp;12pm May 9</time></div>
+                        </a>
+                    </div>
+                    <div class="card-footer load-more">
+                        <button class="load-more" type="submit">load more&nbsp;<i class="fa fa-caret-down"
+                                aria-hidden="true"></i></button>
+                    </div>
+
+
+                </aside>
+            </section>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- footer -->
+        <footer>
+            <p class="school-name">MySchool</p>
+            <address>
+                <p class="school-address">
+                    874-0922, Michigan Road, West Lake city, Washington DC.
+                    <a href="tel:+9915465154561">9841654164</a>
+                </p>
+            </address>
+        </footer>
+
+    </div>
+</body>
+
+</html>

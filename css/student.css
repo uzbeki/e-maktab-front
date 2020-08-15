@@ -1,0 +1,116 @@
+:root {
+  --menu-transition-speed: 0.2s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  min-height: 100vh;
+}
+
+#base-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  align-items: center;
+  padding: 1rem 10%;
+  justify-content: space-between;
+  /* background: #636e72; */
+}
+
+/* small hamburger menu */
+.hamburger {
+  display: none;
+  align-items: center;
+}
+input#menu {
+  /* display: none; */
+  visibility: hidden;
+  width: 40px;
+}
+
+label,
+label::before,
+label::after {
+  cursor: pointer;
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background: #000000;
+  transition: var(--menu-transition-speed);
+  -webkit-transition: var(--menu-transition-speed);
+}
+
+label::before {
+  content: "";
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+}
+label::after {
+  content: "";
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+}
+
+#menu:checked + label {
+  width: 0px;
+  /* transform: translateX(-99%); */
+}
+#menu:checked + label::before {
+  transform: rotate(45deg) translate(0px);
+  -webkit-transform: rotate(45deg) translate(0px);
+}
+#menu:checked + label::after {
+  transform: rotate(-45deg) translate(0px);
+  -webkit-transform: rotate(-45deg) translate(0px);
+}
+/*end of small hamburger menu */
+
+.menu-inside {
+  display: flex;
+  justify-content: space-between;
+  min-width: 50%;
+}
+.menu-inside .nav.navbar {
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+.menu-inside ul {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-inside ul li {
+  padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 550px) {
+  .menu-inside.show {
+    display: block;
+  }
+  .menu-inside {
+    display: none;
+    width: 100%;
+  }
+  .nav.navbar,
+  .navbar-dropdown {
+    flex-direction: column;
+  }
+  .menu-inside ul {
+    display: block;
+  }
+  .hamburger {
+    display: inherit;
+  }
+}
